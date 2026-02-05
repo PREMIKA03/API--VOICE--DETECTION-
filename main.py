@@ -9,7 +9,7 @@ import soundfile as sf
 
 app = FastAPI()
 
-# 🔐 Change this API key (same key submit pannunga)
+#  Change this API key (same key submit pannunga)
 API_KEY = "test123apikey"
 
 class AudioInput(BaseModel):
@@ -25,7 +25,7 @@ def detect_voice(
     data: AudioInput,
     x_api_key: str = Header(None)
 ):
-    # 🔐 Authentication
+    #  Authentication
     if x_api_key != API_KEY:
         raise HTTPException(status_code=401, detail="Invalid API Key")
 
